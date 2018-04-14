@@ -7,6 +7,7 @@ function inserePlacar() {
     let nPalavras = $('#contador-palavras').text();
 
     let linha = novaLinha(usuario, nPalavras);
+    linha.find(".btn-remover").click(removeLinha);
 
     corpoPlacar.prepend(linha);
 
@@ -20,7 +21,7 @@ function novaLinha(usuario, palavaras) {
     let colunaPalavras = $("<td>").text(palavaras);
     let colunaRemover = $("<td>");
 
-    let link = $("<a>").attr("href", "#").addClass("botao-remover");
+    let link = $("<a>").attr("href", "#").addClass("btn-remover");
     let icone = $("<i>").addClass("small").addClass("material-icons").text("delete");
 
     link.append(icone);
@@ -37,10 +38,10 @@ function removeLinha(event) {
     event.preventDefault();
     let linha = $(this).parent().parent();
 
-    linha.fadeOut();
-    setTimeout(function () {
+    linha.fadeOut(1000);
+    setTimeout(function() {
         linha.remove();
-    });
+    },1000);
 }
 
 function mostraPlacar() {

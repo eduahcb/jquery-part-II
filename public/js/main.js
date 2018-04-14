@@ -4,7 +4,7 @@ $(function(){
     iniciaCronometro();
     iniciaVerifica();
 
-    $(".botao-remover").on("click", removeLinha)
+    $(".btn-remover").on("click", removeLinha)
 });
 
 let tempoInicial = $("#tempo").text();
@@ -15,6 +15,10 @@ function atualizaTamanhoFrase() {
     $('#total-palavras').text(tot_palavras);
 }
 
+function atualizaTempoInicial(tempo){
+    tempoInicial = tempo;
+    $('#tempo').text(tempo);
+}
 function iniciaContadores() {
     $('.campo-digitacao').on("input", () => {
         let campo = $('.campo-digitacao').val();
@@ -31,8 +35,8 @@ function iniciaContadores() {
 
 function iniciaCronometro() {
     $('#btn-reinicia').attr("disabled", true);
-    let tempo = $("#tempo").text();
     $('.campo-digitacao').one("focus", function () {
+        let tempo = $("#tempo").text();
         let cronometroID = setInterval(() => {
             tempo--;
             $("#tempo").text(tempo);
@@ -65,8 +69,8 @@ function reiniciaJogo() {
 }
 
 function iniciaVerifica(){
-    let frase = $('.frase').text();
     $('.campo-digitacao').on("input",function(){
+        let frase = $('.frase').text();
         let digitado = $('.campo-digitacao').val();
         let comparavel = frase.substr(0,digitado.length);
 
