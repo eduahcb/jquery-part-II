@@ -24,3 +24,11 @@ body {
 .placar{
     display: none;
 }
+#erro{
+    color: red;
+    font-size: 1.2em;
+    display: none;
+}
+#spinner{
+    display: none;
+}
