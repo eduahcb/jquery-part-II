@@ -5,7 +5,14 @@ $(function(){
     iniciaCronometro();
     iniciaVerifica();
 
-    $(".btn-remover").on("click", removeLinha)
+    $('#usuarios').selectize({
+        create: true,
+        sortField: 'text'
+    });
+
+    $(".tooltip").tooltipster({
+        trigger: "custom"
+    });
 });
 
 let tempoInicial = $("#tempo").text();

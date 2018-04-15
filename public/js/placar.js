@@ -3,7 +3,7 @@ $("#btn-placar").click(mostraPlacar);
 function inserePlacar() {
     let placar = $('.placar');
     let corpoPlacar = placar.find("tbody");
-    let usuario = "Eduardo";
+    let usuario = $("#usuarios").val();
     let nPalavras = $('#contador-palavras').text();
 
     let linha = novaLinha(usuario, nPalavras);
@@ -39,9 +39,9 @@ function removeLinha(event) {
     let linha = $(this).parent().parent();
 
     linha.fadeOut(1000);
-    setTimeout(function() {
+    setTimeout(function () {
         linha.remove();
-    },1000);
+    }, 1000);
 }
 
 function mostraPlacar() {
@@ -53,5 +53,5 @@ function scrollPlacar() {
     $("html").animate(
         {
             scrollTop: posicaoPlacar + "px"
-        },1000);
+        }, 1000);
 }
