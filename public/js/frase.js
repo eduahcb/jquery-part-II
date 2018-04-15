@@ -20,7 +20,6 @@ function fraseAleatoria() {
 function trocaFraseAleatoria(data) {
     let frase = $('.frase');
     let numeroAleatorio = Math.floor(Math.random() * data.length);
-    console.log(data);
     frase.text(data[numeroAleatorio].texto);
     atualizaTamanhoFrase();
     atualizaTempoInicial(data[numeroAleatorio].tempo);
