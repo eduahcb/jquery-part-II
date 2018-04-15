@@ -36,3 +36,6 @@ body {
     width: 3em;
     margin-left: 1em;
 }
+#btn-sync{
+    float: right;
+}

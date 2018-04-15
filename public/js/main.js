@@ -1,4 +1,5 @@
 $(function(){
+    atualizaPlacar();
     atualizaTamanhoFrase();
     iniciaContadores();
     iniciaCronometro();
